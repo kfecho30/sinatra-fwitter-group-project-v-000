@@ -90,6 +90,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tweets/:id' do
+    @tweet = Tweet.find(params[:id])
   end
 
   helpers do
