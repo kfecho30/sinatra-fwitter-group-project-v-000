@@ -104,6 +104,7 @@ class ApplicationController < Sinatra::Base
       erb :'/tweets/edit_tweet'
     else
       redirect '/login'
+    end
   end
 
   helpers do
