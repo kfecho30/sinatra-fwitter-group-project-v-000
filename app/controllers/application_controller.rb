@@ -122,8 +122,9 @@ class ApplicationController < Sinatra::Base
     if logged_in? && @tweet.id == session.user_id
       @tweet.delete
       redirect '/tweets'
+    else
+      redirect '/login'
     end
-    redirect '/tweets'
   end
 
   helpers do
