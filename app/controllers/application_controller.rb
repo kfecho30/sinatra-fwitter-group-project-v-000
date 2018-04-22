@@ -64,6 +64,10 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  get '/tweets/:id' do
+    erb :"users/show"
+  end
+
   helpers do
     def logged_in?
       !!session[:user_id]
