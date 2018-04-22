@@ -109,7 +109,7 @@ class ApplicationController < Sinatra::Base
 
   patch '/tweets/:id' do
     @tweet = Tweet.find(params[:id])
-    @tweet.content = params[:content]
+    @tweet.content = params[:content] if params[:content] != ""
     @tweet.save
   end
 
