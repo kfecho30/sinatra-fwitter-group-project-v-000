@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  post '/tweets' do
+  post '/signup' do
     redirect '/tweets'
   end
 
