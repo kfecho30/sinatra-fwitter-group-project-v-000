@@ -71,6 +71,7 @@ class ApplicationController < Sinatra::Base
       erb :"users/show"
     else
       redirect '/login'
+    end
   end
 
   helpers do
