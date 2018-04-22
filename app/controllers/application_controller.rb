@@ -65,9 +65,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/users/:slug' do
+    binding.pry
     if logged_in?
       @user = User.find_by_slug(params[:slug])
-      binding.pry
       @tweets = @user.tweets
       erb :"users/show"
     else
