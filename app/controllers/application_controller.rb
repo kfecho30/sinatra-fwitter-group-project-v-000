@@ -81,6 +81,8 @@ class ApplicationController < Sinatra::Base
 
   post '/tweets' do
     @tweet = Tweet.create(params)
+    @tweet.user_id = session[:user_id]
+    @tweet.save
   end
 
   helpers do
