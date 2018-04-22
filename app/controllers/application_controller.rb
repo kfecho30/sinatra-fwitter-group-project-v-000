@@ -79,6 +79,11 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  post '/tweets' do
+    @tweet = Tweet.create(params)
+
+  end
+
   helpers do
     def logged_in?
       !!session[:user_id]
