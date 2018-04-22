@@ -84,6 +84,8 @@ class ApplicationController < Sinatra::Base
       @tweet = Tweet.create(params)
       @tweet.user_id = session[:user_id]
       @tweet.save
+    else
+      redirect '/tweets/new'
     end
   end
 
