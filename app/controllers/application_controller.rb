@@ -59,7 +59,7 @@ class ApplicationController < Sinatra::Base
     if logged_in?
       @user = User.find(session[:user_id])
       binding.pry
-      @tweets = Tweets.all
+      @tweets = Tweet.all
       erb :'tweets/tweets'
     else
       redirect '/login'
