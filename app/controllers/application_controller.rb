@@ -27,7 +27,6 @@ class ApplicationController < Sinatra::Base
       redirect '/tweets'
     end
       erb :'users/create_user'
-    end
   end
 
   get '/tweets' do
@@ -42,4 +41,5 @@ class ApplicationController < Sinatra::Base
     def current_user
       User.find(session[:user_id])
     end
+  end
 end
