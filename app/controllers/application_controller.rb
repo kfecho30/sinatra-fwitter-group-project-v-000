@@ -81,7 +81,6 @@ class ApplicationController < Sinatra::Base
 
   post '/tweets' do
     @tweet = Tweet.create(params)
-
   end
 
   helpers do
