@@ -65,6 +65,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tweets/:id' do
+    if logged_in?
+      @user = User.find(params[:id])
+      @tweets = @user.tweets
     erb :"users/show"
   end
 
