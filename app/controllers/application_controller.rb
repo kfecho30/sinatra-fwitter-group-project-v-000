@@ -68,7 +68,9 @@ class ApplicationController < Sinatra::Base
     if logged_in?
       @user = User.find(params[:id])
       @tweets = @user.tweets
-    erb :"users/show"
+      erb :"users/show"
+    else
+      redirect '/login'
   end
 
   helpers do
