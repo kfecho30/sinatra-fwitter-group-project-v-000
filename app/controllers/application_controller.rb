@@ -58,7 +58,6 @@ class ApplicationController < Sinatra::Base
   get '/tweets' do
     if logged_in?
       @user = User.find(session[:user_id])
-      binding.pry
       @tweets = Tweet.all
       erb :'tweets/tweets'
     else
